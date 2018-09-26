@@ -123,6 +123,18 @@
 		],
 		"banana-in-box": true,
 		"templates-no-negated-async": true,
+		"directive-selector": [
+			true,
+			"attribute",
+			"",
+			"camelCase"
+		],
+		"component-selector": [
+			true,
+			"element",
+			"",
+			"kebab-case"
+		],
 		"max-inline-declarations": true,
 		"no-life-cycle-call": true,
 		"prefer-output-readonly": true,
