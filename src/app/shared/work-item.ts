@@ -4,18 +4,18 @@ export class WorkItem {
 	status: Status;
 	priority: Priority;
 
-	location?: string;
-	subject?: string;
-	description?: string;
+	location: string;
+	subject: string;
+	description: string;
 
 	isEditMode: boolean;
 	isExpanded: boolean;
 
-	projectId?: number;
-	project?: Project;
+	projectId: number;
+	project: Project;
 
-	assignedToUserId: number | null;
-	assignedToUser: User | null;
+	assignedToUserId: number;
+	assignedToUser: User;
 }
 
 export enum Type {

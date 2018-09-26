@@ -1,0 +1,84 @@
+<tr>
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.id }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="number"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.id">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.project.name }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="text"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.project.name">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.assignedToUser.fullName }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="text"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.assignedToUser.fullName">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.type | enum:typeType }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="number"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.type">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.status | enum:statusType }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="number"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.status">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.location }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="text"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.location">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.subject }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="text"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.subject">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.description }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="text"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.description">
+	</td>
+
+	<td>
+		<span *ngIf="!model.isEditMode">{{ model.priority | enum:statusType }}</span>
+		<input *ngIf="model.isEditMode"
+		       type="number"
+		       class="form-control form-control-sm"
+		       [(ngModel)]="model.priority">
+	</td>
+
+	<td>
+		<button *ngIf="!model.isEditMode"
+		        type="button"
+		        class="btn btn-warning btn-sm"
+		        (click)="model.isEditMode = true">Edit</button>
+		<button *ngIf="model.isEditMode"
+		        type="button"
+		        class="btn btn-success btn-sm"
+		        (click)="model.isEditMode = false">Save</button>
+	</td>
+</tr>

@@ -19,8 +19,7 @@
 		<tbody>
 			<ng-template ngFor
 			             let-item
-			             [ngForOf]="items"
-			             let-i="index">
+			             [ngForOf]="items">
 				<tr>
 					<td>
 						<span *ngIf="!item.isEditMode">{{ item.id }}</span>
