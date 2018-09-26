@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { WorkItemService } from './shared/work-item.service';
 
 
 @NgModule({
@@ -12,7 +13,7 @@ import { AppComponent } from './app.component';
 		BrowserModule,
 		AppRoutingModule
 	],
-	providers: [],
+	providers: [WorkItemService],
 	bootstrap: [AppComponent]
 })
 export class AppModule { }
