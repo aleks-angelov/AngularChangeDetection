@@ -17,11 +17,9 @@
 		</thead>
 
 		<tbody>
-			<ng-template ngFor
-			             let-item
-			             [ngForOf]="items">
-				<default-child [model]="item"></default-child>
-			</ng-template>
+			<tr onpush-child
+			    *ngFor="let item of items"
+			    [model]="item"></tr>
 		</tbody>
 	</table>
 </div>
