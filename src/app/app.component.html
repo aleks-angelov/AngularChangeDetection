@@ -1,6 +1,11 @@
 <nav class="navbar navbar-expand-md navbar-dark bg-primary">
-	<a class="navbar-brand"
-	   routerLink="/default/single">Change Detection</a>
+	<a class="navbar-brand text-white">
+		<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
+		     width="30"
+		     height="30"
+		     class="d-inline-block align-top">
+		<span>&nbsp;Change Detection</span>
+	</a>
 	<button class="navbar-toggler"
 	        type="button"
 	        data-toggle="collapse"
@@ -10,27 +15,23 @@
 
 	<div class="collapse navbar-collapse"
 	     id="navbarNav">
-		<ul class="navbar-nav">
-			<li class="nav-item active">
-				<a class="nav-link"
-				   routerLink="/default/single">Default Single</a>
-			</li>
+		<div class="navbar-nav">
+			<a class="nav-item nav-link"
+			   routerLink="/default/single"
+			   routerLinkActive="active">Default Single</a>
 
-			<li class="nav-item">
-				<a class="nav-link"
-				   routerLink="/default/child">Default Child</a>
-			</li>
+			<a class="nav-item nav-link"
+			   routerLink="/default/child"
+			   routerLinkActive="active">Default Child</a>
 
-			<li class="nav-item">
-				<a class="nav-link"
-				   routerLink="/onpush/single">OnPush Single</a>
-			</li>
+			<a class="nav-item nav-link"
+			   routerLink="/onpush/single"
+			   routerLinkActive="active">OnPush Single</a>
 
-			<li class="nav-item">
-				<a class="nav-link"
-				   routerLink="/onpush/child">OnPush Child</a>
-			</li>
-		</ul>
+			<a class="nav-item nav-link"
+			   routerLink="/onpush/child"
+			   routerLinkActive="active">OnPush Child</a>
+		</div>
 	</div>
 </nav>
 

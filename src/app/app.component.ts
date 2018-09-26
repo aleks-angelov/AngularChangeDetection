@@ -3,11 +3,10 @@ import { WorkItemService } from './shared/work-item.service';
 
 @Component({
 	selector: 'app-root',
-	templateUrl: './app.component.html',
-	styleUrls: ['./app.component.css']
+	templateUrl: './app.component.html'
 })
 export class AppComponent {
 	constructor(itemService: WorkItemService) {
-		itemService.setItems(2000);
+		itemService.setItems(1000);
 	}
 }

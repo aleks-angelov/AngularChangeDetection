@@ -3,12 +3,12 @@ import { Priority, Status, Type, WorkItem } from '../shared/work-item';
 import { WorkItemService } from '../shared/work-item.service';
 
 @Component({
-	selector: 'default-single',
-	templateUrl: 'default-single.component.html',
-	changeDetection: ChangeDetectionStrategy.Default
+	selector: 'onpush-single',
+	templateUrl: 'onpush-single.component.html',
+	changeDetection: ChangeDetectionStrategy.OnPush
 })
 
-export class DefaultSingleComponent {
+export class OnPushSingleComponent {
 	items: WorkItem[];
 
 	typeType = Type;

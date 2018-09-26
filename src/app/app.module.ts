@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { DefaultSingleComponent } from './defaultSingle/default-single.component';
+import { OnPushSingleComponent } from './onpushSingle/onpush-single.component';
 import { EnumPipe } from './shared/enum.pipe';
 import { WorkItemService } from './shared/work-item.service';
 
@@ -11,6 +12,7 @@ import { WorkItemService } from './shared/work-item.service';
 	declarations: [
 		AppComponent,
 		DefaultSingleComponent,
+		OnPushSingleComponent,
 		EnumPipe
 	],
 	imports: [
