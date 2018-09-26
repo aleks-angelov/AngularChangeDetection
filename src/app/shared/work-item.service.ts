@@ -6,6 +6,8 @@ export class WorkItemService {
 	private workItems: WorkItem[];
 
 	setItems(count: number): void {
+		this.workItems = [];
+
 		for (let i = 0; i < count; i++) {
 			const newItem = new WorkItem();
 

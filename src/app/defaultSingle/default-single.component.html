@@ -1,0 +1,93 @@
+<table *ngIf="items">
+	<thead>
+		<tr>
+			<th style="width: 5%">#</th>
+			<th style="width: 10%">Project</th>
+			<th style="width: 10%">User</th>
+			<th style="width: 5%">Type</th>
+			<th style="width: 5%">Status</th>
+			<th style="width: 10%">Location</th>
+			<th style="width: 20%">Subject</th>
+			<th style="width: 25%">Description</th>
+			<th style="width: 5%">Priority</th>
+			<th style="width: 5%">+</th>
+		</tr>
+	</thead>
+
+	<tbody>
+		<ng-template ngFor
+		             let-item
+		             [ngForOf]="items"
+		             let-i="index">
+			<tr>
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.id }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="number"
+					       [(ngModel)]="item.id">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.project.name }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="text"
+					       [(ngModel)]="item.project.name">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.assignedToUser.fullName }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="text"
+					       [(ngModel)]="item.assignedToUser.fullName">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.type | enum:typeType }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="number"
+					       [(ngModel)]="item.type">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.status | enum:statusType }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="number"
+					       [(ngModel)]="item.status">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.location }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="text"
+					       [(ngModel)]="item.location">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.subject }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="text"
+					       [(ngModel)]="item.subject">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.description }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="text"
+					       [(ngModel)]="item.description">
+				</td>
+
+				<td>
+					<span *ngIf="!item.isEditMode">{{ item.priority | enum:statusType }}</span>
+					<input *ngIf="item.isEditMode"
+					       type="number"
+					       [(ngModel)]="item.priority">
+				</td>
+
+				<td>
+					<button type="button"
+					        (click)="item.isEditMode = !item.isEditMode">/</button>
+				</td>
+			</tr>
+		</ng-template>
+	</tbody>
+</table>
