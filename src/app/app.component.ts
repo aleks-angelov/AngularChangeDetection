@@ -6,7 +6,16 @@ import { WorkItemService } from './shared/work-item.service';
 	templateUrl: './app.component.html'
 })
 export class AppComponent {
-	constructor(itemService: WorkItemService) {
-		itemService.setItems(1000);
+	readonly currentYear: number;
+	itemCount: number;
+
+	constructor(private itemService: WorkItemService) {
+		this.currentYear = new Date().getUTCFullYear();
+		this.itemCount = 1000;
+		this.setCount();
+	}
+
+	setCount(): void {
+		this.itemService.setCount(this.itemCount);
 	}
 }

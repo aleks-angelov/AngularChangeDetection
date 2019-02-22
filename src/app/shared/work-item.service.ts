@@ -1,12 +1,29 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject, Subject, Subscription } from 'rxjs';
 import { Project, User, WorkItem } from './work-item';
 
 @Injectable()
 export class WorkItemService {
-	private workItems: WorkItem[];
+	private readonly $itemCount: Subject<number>;
+	private readonly $workItems: BehaviorSubject<WorkItem[]>;
 
-	setItems(count: number): void {
-		this.workItems = [];
+	constructor() {
+		this.$itemCount = new Subject<number>();
+		this.$workItems = new BehaviorSubject<WorkItem[]>([]);
+		this.$itemCount.subscribe(newCount => this.setItems(newCount));
+	}
+
+	setCount(newCount: number): void {
+		this.$itemCount.next(newCount);
+	}
+
+
+	getItems(next: (newItems: WorkItem[]) => void): Subscription {
+		return this.$workItems.subscribe(next);
+	}
+
+	private setItems(count: number): void {
+		const workItems: WorkItem[] = [];
 
 		for (let i = 1; i <= count; i++) {
 			const newItem = new WorkItem();
@@ -38,11 +55,9 @@ export class WorkItemService {
 			newItem.assignedToUserId = newUser.id;
 			newItem.assignedToUser = newUser;
 
-			this.workItems.push(newItem);
+			workItems.push(newItem);
 		}
-	}
 
-	getItems(): WorkItem[] {
-		return this.workItems;
+		this.$workItems.next(workItems);
 	}
 }

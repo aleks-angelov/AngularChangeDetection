@@ -12,6 +12,6 @@ export class DefaultParentComponent {
 	items: WorkItem[];
 
 	constructor(itemService: WorkItemService) {
-		this.items = itemService.getItems();
+		itemService.getItems(newItems => this.items = newItems);
 	}
 }

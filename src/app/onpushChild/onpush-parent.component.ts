@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { WorkItem } from '../shared/work-item';
 import { WorkItemService } from '../shared/work-item.service';
 
@@ -11,7 +11,12 @@ import { WorkItemService } from '../shared/work-item.service';
 export class OnPushParentComponent {
 	items: WorkItem[];
 
-	constructor(itemService: WorkItemService) {
-		this.items = itemService.getItems();
+	constructor(
+		changeDetector: ChangeDetectorRef,
+		itemService: WorkItemService) {
+		itemService.getItems(newItems => {
+			this.items = newItems;
+			changeDetector.markForCheck();
+		});
 	}
 }
